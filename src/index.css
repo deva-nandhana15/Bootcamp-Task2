@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bgDark text-textLight font-sans;
+  }
+}
+@layer components {
+  .btn {
+    @apply px-4 py-2 bg-primary text-white rounded hover:bg-blue-600;
+  }
+}
+@layer utilities {
+  .bg-bgDark {
+    background-color: #121212;
+  }
+  .text-textLight {
+    color: #e0e0e0;
+  }
+  .bg-primary {
+    background-color: #1e88e5;
+  }
+}
