@@ -1,34 +1,33 @@
-import { useState } from 'react';
-import { Plus } from 'lucide-react';
+import { useState } from "react";
 
 interface AddTaskInputProps {
-  onAdd: (task: string) => void;
+  onAdd: (text: string) => void;
 }
 
 export default function AddTaskInput({ onAdd }: AddTaskInputProps) {
-  const [task, setTask] = useState('');
+  const [text, setText] = useState("");
 
   const handleAdd = () => {
-    if (task.trim()) {
-      onAdd(task);
-      setTask('');
+    if (text.trim() !== "") {
+      onAdd(text);
+      setText("");
     }
   };
 
   return (
-    <div className="flex gap-2 items-center mb-4">
+    <div className="flex w-[500px] mb-4">
       <input
         type="text"
-        className="flex-grow p-2 border rounded"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
         placeholder="Enter new task"
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
+        className="flex-1 p-2 rounded-l bg-[#5C4033] text-white border border-orange-500 focus:outline-none"
       />
       <button
         onClick={handleAdd}
-        className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+        className="bg-orange-500 text-white px-4 rounded-r hover:bg-orange-600"
       >
-        <Plus />
+        +
       </button>
     </div>
   );
