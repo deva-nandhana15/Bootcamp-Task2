@@ -34,13 +34,13 @@ src/
 
 │   ├── AddSectionInput.tsx 
 
-|   ├── AddTaskInput.tsx 
+│   ├── AddTaskInput.tsx 
 
 │   ├── Clock.tsx             # Displays live time
 
 │   ├── SectionColumn.tsx     # Each section (To Do, Completed, or custom)
 
-|   ├── TaskItem.tsx
+│   ├── TaskItem.tsx
 
 │
 
