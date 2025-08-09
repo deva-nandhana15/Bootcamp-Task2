@@ -29,20 +29,35 @@ Features include drag-and-drop task organization, user-created sections, ticking
 src/
 
 │
+
 ├── components/
+
 │   ├── AddSectionInput.tsx 
+
 |   ├── AddTaskInput.tsx 
+
 │   ├── Clock.tsx             # Displays live time
+
 │   ├── SectionColumn.tsx     # Each section (To Do, Completed, or custom)
+
 |   ├── TaskItem.tsx
+
 │
+
 ├── pages/
+
 │   └── ProfileTab.tsx        # Placeholder profile page
+
 │
+
 ├── types/
+
 │   └── types.ts              # Shared TypeScript interfaces
+
 │
+
 ├── App.tsx                   # Main app logic & state management
+
 └── main.tsx                  # Entry point
 
 
