@@ -6,6 +6,7 @@ Features include drag-and-drop task organization, user-created sections, ticking
 ## Features
 
 ✅ Add tasks to a "To Do" list.
+
 ✅ Mark tasks as completed with a single click.
 ✅ Drag & Drop tasks between sections using @hello-pangea/dnd.
 ✅ Create custom sections to organize tasks your way.
