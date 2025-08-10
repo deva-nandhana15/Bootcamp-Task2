@@ -1,4 +1,4 @@
-import { Trash2, Check } from 'lucide-react';
+import { Trash2, Check } from 'lucide-react'; 
 
 interface TaskItemProps {
   task: string;
