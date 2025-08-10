@@ -1,69 +1,118 @@
-# React + TypeScript + Vite
+# Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, customizable task management web app built with React + TypeScript.
 
-Currently, two official plugins are available:
+Features include drag-and-drop task organization, user-created sections, ticking clock, and both task & section deletion.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+✅ Add tasks to a "To Do" list.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+✅ Mark tasks as completed with a single click.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+✅ Drag & Drop tasks between sections using @hello-pangea/dnd.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+✅ Create custom sections to organize tasks your way.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+✅ Delete tasks individually with ❌ buttons.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+✅ Delete user-created sections (removes all tasks in that section).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+✅ Profile tab for user info (demo / placeholder).
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+✅ Live clock in the Home tab.
+
+✅ Responsive layout with modern styling.
+
+## Project Structure
+
+src/
+
+│
+
+├── components/
+
+│   ├── AddSectionInput.tsx 
+
+│   ├── AddTaskInput.tsx 
+
+│   ├── Clock.tsx             # Displays live time
+
+│   ├── SectionColumn.tsx     # Each section (To Do, Completed, or custom)
+
+│   ├── TaskItem.tsx
+
+│
+
+├── pages/
+
+│   └── ProfileTab.tsx        # Placeholder profile page
+
+│
+
+├── types/
+
+│   └── types.ts              # Shared TypeScript interfaces
+
+│
+
+├── App.tsx                   # Main app logic & state management
+
+└── main.tsx                  # Entry point
+
+
+## How to Use
+
+1. Adding Tasks
+
+  Type a task in the "Add Task" field.
+
+  Click the ➕ button or press Enter to add it to the To Do section.
+
+2. Completing Tasks
+
+  Click the green ✅ icon to toggle task completion.
+
+  Completed tasks move to the Completed section automatically.
+
+3. Creating Sections
+
+  Enter a section name in the "Enter Section" input.
+
+  Click the ➕ to create it.
+
+  New sections appear alongside "To Do" and "Completed."
+
+4. Drag & Drop
+
+  Drag tasks between sections to reorganize them.
+
+  Tasks in Completed are always marked as completed.
+
+5. Deleting Tasks
+
+  Click ❌ on any task to remove it permanently.
+
+6. Deleting Sections
+
+  Click ❌ in the header of a user-created section to delete it and all its tasks.
+
+## Code Highlights
+
+1.App.tsx
+
+  Manages global state for tasks and sections.
+
+  Handles adding, deleting, toggling, and moving tasks.
+
+  Controls creation/deletion of sections.
+
+  Integrates DragDropContext from @hello-pangea/dnd.
+
+2.SectionColumn.tsx
+
+  Displays a droppable area for tasks.
+  
+  Renders draggable task items.
+  
+  Shows ❌ button for section deletion only if it’s user-created.
